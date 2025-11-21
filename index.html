@@ -1,4 +1,283 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbalife APAC Research Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 48px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .section-intro {
+            font-size: 1.25rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .insight-block {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+            color: white;
+        }
+
+        .insight-block[style*="border-left-color: #f57c00"] {
+            background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+        }
+
+        .insight-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .insight-number {
+            font-size: 2rem;
+        }
+
+        .insight-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .insight-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .insight-content p {
+            margin-bottom: 16px;
+        }
+
+        .insight-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-content strong {
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .rationale-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .rationale-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 24px;
+            border-left: 4px solid #667eea;
+        }
+
+        .rationale-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .rationale-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .rationale-text {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .opportunities-header {
+            margin: 48px 0 32px;
+        }
+
+        .opportunities-header h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .opportunities-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .opportunity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .opportunity-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .opportunity-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .opportunity-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .opportunity-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .opportunity-impact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .impact-high {
+            background: #667eea;
+        }
+
+        .impact-medium {
+            background: #f57c00;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: #e8eaf6;
+            color: #667eea;
+        }
+
+        .insight-data {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .insight-data-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            opacity: 0.95;
+        }
+
+        .data-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .data-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .data-region {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .data-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .data-label {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 32px 16px;
+            }
+
+            .section {
+                padding: 32px 24px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-intro {
+                font-size: 1.1rem;
+            }
+
+            .rationale-grid,
+            .opportunity-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <!-- Project Context & Goals -->
         <div class="section">
             <div class="section-header">
@@ -67,7 +346,7 @@
                 </div>
             </div>
 
-            <div class="opportunities-header" style="margin-top: 48px;">
+            <div class="opportunities-header">
                 <h3>Key Questions Driving the Research</h3>
                 <p>Our multi-method approach was designed to answer several interconnected questions about cross-cultural product experience</p>
             </div>
@@ -191,7 +470,7 @@
                 </div>
             </div>
 
-            <div class="insight-block" style="margin-top: 32px; border-left-color: #f57c00;">
+            <div class="insight-block" style="margin-top: 32px; background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);">
                 <div class="insight-header">
                     <div class="insight-number">⚠️</div>
                     <div class="insight-title">Addressing the Key Assumption: English Language Proficiency</div>
@@ -218,6 +497,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- My Role -->
-        <div class="section">
+    </div>
+</body>
+</html>
